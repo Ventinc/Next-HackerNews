@@ -1,3 +1,4 @@
+import Error from 'next/error'
 import Layout from "../../components/Layout";
 import api from "../../config/api";
 import styled from "styled-components";
@@ -38,7 +39,11 @@ const UserInformation = styled.div`
   margin: 8px 0px;
 `
 
-function UserPage({ user }) {
+function UserPage({ errorCode, user }) {
+  if (errorCode) {
+    return <Error statusCode={errorCode} />
+  }
+
   return (
     <Layout>
       <UserContainer>
@@ -57,8 +62,14 @@ function UserPage({ user }) {
 
 UserPage.getInitialProps = async ({ query }) => {
   const res = await api.get(`/user/${query.id}.json`);
+ 
+  let errorCode = res.status !== 200 ? res.status : false;
+  
+  if (!res.data) {
+    errorCode = 404;
+  }
 
-  return { user: res.data }
+  return { errorCode, user: res.data }
 }
 
 export default UserPage;
