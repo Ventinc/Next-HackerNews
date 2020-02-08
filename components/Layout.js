@@ -10,7 +10,7 @@ const LayoutContainer = styled.div`
 const Container = styled.div`
   width: 800px;
   margin: 0px auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   padding: 30px 0px;
 
   @media screen and (max-width: 800px) {
