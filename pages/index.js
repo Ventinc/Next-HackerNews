@@ -38,6 +38,13 @@ const PageButton = styled.button`
   background-color: ${colors.yellow400};
   cursor: pointer;
   border-bottom: 2px solid ${colors.yellow500};
+  transition: opacity 0.4s ease;
+  outline: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `
 
 function HomePage({ stories }) {
