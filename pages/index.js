@@ -4,11 +4,10 @@ import api from '../config/api';
 import Layout from '../components/Layout';
 import Story from '../components/Story';
 import colors from '../config/colors';
+import Card from '../components/Card';
 
-const StoryList = styled.div`
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  border: 1px solid ${colors.gray200};
+const StoryList = styled(Card)`
+  padding: 0;
   ul {
     list-style-type: none;
     padding: 0;
@@ -16,19 +15,16 @@ const StoryList = styled.div`
   }
 `
 
-const PaginationContainer = styled.div`
-  border-radius: 4px;
-  background-color: #FFFFFF;
+const PaginationContainer = styled(Card)`
   margin-bottom: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 8px;
-  border-radius: 4px;
 `
 
 const PageInfo = styled.span`
   color: ${colors.gray900};
+  font-size: 0.9em;
 `
 
 const PageButton = styled.button`
