@@ -50,7 +50,7 @@ function HomePage({ stories }) {
     <Layout>
       <PaginationContainer>
         <PageButton disabled={page < 1} onClick={() => setPage(page - 1)}>Prev</PageButton>
-        <PageInfo>{page + 1} / {stories.length / 20}</PageInfo>
+        <PageInfo>{page + 1} / {Math.ceil(stories.length / 20)}</PageInfo>
         <PageButton disabled={page >= stories.length / 20 - 1} onClick={() => setPage(page + 1)}>More</PageButton>
       </PaginationContainer>
       <StoryList>
