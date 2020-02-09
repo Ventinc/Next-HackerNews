@@ -26,7 +26,7 @@ const HeaderLogo = styled.h1`
   font-size: 1.2em;
   margin: 0;
   color: ${colors.yellow700};
-  margin-right: 20px;
+  margin: 0px 16px;
 `
 
 const HeaderLinks = styled.ul`
