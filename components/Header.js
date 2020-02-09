@@ -63,8 +63,6 @@ function HeaderLink({ href, children }) {
 function Header() {
   const router = useRouter();
 
-  console.log(router.pathname);
-
   return (
     <HeaderContainer>
       <HeaderContent>

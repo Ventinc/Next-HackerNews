@@ -33,8 +33,6 @@ function StoryPage ({ errorCode, story }) {
 StoryPage.getInitialProps = async ({ query }) => {
   const res = await api.get(`/item/${query.id}.json`);
 
-  console.log(res);
-
   let errorCode = res.status !== 200 ? res.status : false;
 
   if (res.data === null) {
