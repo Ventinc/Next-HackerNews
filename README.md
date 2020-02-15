@@ -7,12 +7,14 @@ For now there is just:
 - Top Stories
 - Story and Comment
 - User informations
-
-Need to add soon:
 - New
 - Show
 - Ask
 - Jobs
+
+Need to add soon:
+- Improvement when it's not SSR
+- Make a component to remove duplicate pages
 
 Built with:
 - [NextJS]()
