@@ -55,8 +55,8 @@ function HomePage({ stories }) {
       </PaginationContainer>
       <StoryList>
         <ul>
-          {stories.slice(0 + (20 * page), 20 + (20 * page)).map(storyId => (
-            <Story key={storyId} id={storyId} />
+          {stories.slice(0 + (20 * page), 20 + (20 * page)).map(story => (
+            <Story key={story.id} story={story} />
           ))}
         </ul>
       </StoryList>
@@ -65,9 +65,15 @@ function HomePage({ stories }) {
 }
 
 HomePage.getInitialProps = async () => {
-  const res = await api.get('topstories.json');
+  const { data: storiesId } = await api.get('topstories.json');
 
-  return { stories: res.data }
+  const stories = await Promise.all(storiesId.map(async (storyId) => {
+    const res = await api.get(`item/${storyId}.json`);
+
+    return res.data;
+  }));
+
+  return { stories }
 }
 
 export default HomePage;

@@ -3,9 +3,11 @@ import Error from 'next/error';
 import Layout from "../../components/Layout";
 import api from "../../config/api";
 import Card, { CardTitle, CardSubTitle } from "../../components/Card";
-import { StoryMeta } from '../../components/Story';
+import StoryContent from '../../components/Story/Content';
 import { formatDistanceToNow, fromUnixTime } from 'date-fns';
 import StoryComment from '../../components/StoryComment';
+
+const { StoryMeta } = StoryContent;
 
 function StoryPage ({ errorCode, story }) {
   if (errorCode) {
