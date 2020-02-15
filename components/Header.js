@@ -80,7 +80,7 @@ function Header() {
           <HeaderLink href='/new'>New</HeaderLink>
           <HeaderLink href='/show'>Show</HeaderLink>
           <HeaderLink href='/ask'>Ask</HeaderLink>
-          <HeaderLink href='/job'>Ask</HeaderLink>
+          <HeaderLink href='/job'>Job</HeaderLink>
         </HeaderLinks>
       </HeaderContent>
     </HeaderContainer>
