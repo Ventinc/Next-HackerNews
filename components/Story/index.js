@@ -16,8 +16,12 @@ function Story({ story }) {
           By <Link href={`/user/${story.by}`}><a>{story.by}</a></Link>
           {' '}
           { formatDistanceToNow(fromUnixTime(story.time), { addSuffix: true }) }
-          {' | '}
-          <Link href={`/item/${story.id}`}><a>{story.descendants} comments</a></Link>
+          {story.type !== 'job' && (
+            <>
+              {' | '}
+              <Link href={`/item/${story.id}`}><a>{story.descendants} comments</a></Link>
+            </>
+          )}
         </StoryMeta>
       </StoryContent>
     </StoryContainer>

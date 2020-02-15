@@ -67,8 +67,6 @@ function HeaderLink({ href, children }) {
 }
 
 function Header() {
-  const router = useRouter();
-
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -82,6 +80,7 @@ function Header() {
           <HeaderLink href='/new'>New</HeaderLink>
           <HeaderLink href='/show'>Show</HeaderLink>
           <HeaderLink href='/ask'>Ask</HeaderLink>
+          <HeaderLink href='/job'>Ask</HeaderLink>
         </HeaderLinks>
       </HeaderContent>
     </HeaderContainer>
