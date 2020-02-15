@@ -79,6 +79,7 @@ function Header() {
         </HeaderLogo>
         <HeaderLinks>
           <HeaderLink href='/'>Top</HeaderLink>
+          <HeaderLink href='/new'>New</HeaderLink>
         </HeaderLinks>
       </HeaderContent>
     </HeaderContainer>
