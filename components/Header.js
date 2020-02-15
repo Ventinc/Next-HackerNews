@@ -27,6 +27,12 @@ const HeaderLogo = styled.h1`
   margin: 0;
   color: ${colors.yellow700};
   margin: 0px 16px;
+  text-decoration: none;
+  
+  a {
+    text-decoration: none;
+    color: ${colors.yellow700};
+  }
 `
 
 const HeaderLinks = styled.ul`
@@ -66,7 +72,11 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <HeaderLogo>HackerNextJS</HeaderLogo>
+        <HeaderLogo>
+          <Link href="/" passHref>
+            <a>HackerNextJS</a>
+          </Link>
+        </HeaderLogo>
         <HeaderLinks>
           <HeaderLink href='/'>Top</HeaderLink>
         </HeaderLinks>
