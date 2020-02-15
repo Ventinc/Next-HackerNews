@@ -73,7 +73,7 @@ HomePage.getInitialProps = async () => {
     return res.data;
   }));
 
-  return { stories }
+  return { stories: stories.filter(story => story !== null) }
 }
 
 export default HomePage;
