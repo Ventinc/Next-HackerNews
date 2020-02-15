@@ -72,7 +72,7 @@ function Header() {
       <HeaderContent>
         <HeaderLogo>
           <Link href="/" passHref>
-            <a>HackerNextJS</a>
+            <a>Next HN</a>
           </Link>
         </HeaderLogo>
         <HeaderLinks>
