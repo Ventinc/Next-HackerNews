@@ -2,7 +2,7 @@ import colors from '../config/colors';
 import Card from './Card';
 import styled from 'styled-components';
 
-const Pagination = styled(Card)`
+const PaginationContainer = styled(Card)`
   margin-bottom: 16px;
   display: flex;
   flex-direction: row;
@@ -30,7 +30,14 @@ const PageButton = styled.button`
   }
 `
 
-Pagination.PageInfo = PageInfo;
-Pagination.PageButton = PageButton;
+function Pagination({ page, onPrev, onMore, max }) {
+  return (
+    <PaginationContainer>
+      <PageButton disabled={page < 1} onClick={onPrev}>Prev</PageButton>
+      <PageInfo>{page + 1} / {Math.ceil(max / 20)}</PageInfo>
+      <PageButton disabled={page >= max / 20 - 1} onClick={onMore}>More</PageButton>
+    </PaginationContainer>
+  );
+}
 
 export default Pagination;

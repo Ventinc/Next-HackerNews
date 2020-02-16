@@ -12,18 +12,13 @@ function HomePage({ stories }) {
 
   return (
     <Layout>
-      <Pagination>
-        <PageButton disabled={page < 1} onClick={() => setPage(page - 1)}>Prev</PageButton>
-        <PageInfo>{page + 1} / {Math.ceil(stories.length / 20)}</PageInfo>
-        <PageButton disabled={page >= stories.length / 20 - 1} onClick={() => setPage(page + 1)}>More</PageButton>
-      </Pagination>
-      <StoryList>
-        <ul>
-          {stories.slice(0 + (20 * page), 20 + (20 * page)).map(story => (
-            <Story key={story.id} story={story} />
-          ))}
-        </ul>
-      </StoryList>
+      <Pagination
+        page={page}
+        onMore={() => setPage(page + 1)}
+        onPrev={() => setPage(page - 1)}
+        max={stories.length}
+      />
+      <StoryList stories={stories} page={page} pageSize={20} />
     </Layout>
   );
 }
